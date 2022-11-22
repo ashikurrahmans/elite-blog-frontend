@@ -49,11 +49,10 @@ function App() {
 
             <Route path="hello/dashboards/login" element={<Login />}></Route>
             <Route path="hello/dashboards/" element={<Dashboard /> }>
-
-              {/* Sub Routes */}
-            <Route path="allarticles" element={<AllArticles />}></Route>
-            <Route path="addnewarticle" element={<AddNewArticle />}></Route>
-            <Route path="settings" element={<Settings />}></Route>
+                  {/* Sub Routes */}
+                <Route path="allarticles" element={<AllArticles />}></Route>
+                <Route path="addnewarticle" element={<AddNewArticle />}></Route>
+                <Route path="settings" element={<Settings />}></Route>
             </Route>
 
             <Route path="*" element={<NotFound />}></Route>
