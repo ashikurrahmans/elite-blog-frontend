@@ -20,7 +20,7 @@ const BlogCard = ({ blog }) => {
         <div className="lg:col-span-2 md:col-span-1">
           <div className="py-8 mb-12 mx-4">
             <div className="mt-2 mb-4">
-              <Link to={`/blogs/${blog.id}`}>
+              <Link to={`/blogs/${blog._id}`}>
                 <h1 className="mb-3 text-xl font-bold">{title}</h1>
               </Link>
               <div className="text-sm text-neutral-600 md:none">

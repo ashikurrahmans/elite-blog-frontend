@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { createContext } from "react";
 import { useEffect } from "react";
-import axios from "axios";
 
 // Creating Content
 export const allContext = createContext();
@@ -13,21 +12,22 @@ const ContentProvider = ({ children }) => {
   const [blogSingle, setSingleBlog] = useState([]);
 
   // Fetching for Blog
-  const fetchBlog = async () => {
-    const response = await axios.get(
-      `http://localhost:5000/blogs`
-    );
+  const fetchBlog = () => {
+    fetch(`http://localhost:5000/blogs`)
+    .then(res => res.json())
+    .then(data => setBlogs(data));
 
-    setBlogs(response?.data);
   };
   // Fetching for Blog
-  const fetchBlogSingle = async (id) => {
-    const response = await axios.get(
-      `http://localhost:5000/blogs/${id}`
-    );
-    console.log(response)
-    setSingleBlog(response?.data);
-    console.log(response)
+  const fetchBlogSingle = (id) => { 
+    fetch(`http://localhost:5000/blogs/${id}`)
+    .then(res => res.json())
+    .then(data =>{
+      setLoading(true)
+      setSingleBlog(data)
+      setLoading(false)
+
+    });
   };
 
   // Fetching for categories
@@ -35,7 +35,6 @@ const ContentProvider = ({ children }) => {
 
   useEffect(() => {
     fetchBlog();
-    fetchBlogSingle();
   }, []);
 
   const value = { blogs, loading, fetchBlogSingle, blogSingle };

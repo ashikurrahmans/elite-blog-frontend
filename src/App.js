@@ -15,6 +15,11 @@ import { useContext } from "react";
 import { pageContent } from "./ContextApi/PagesContext";
 import Loader from "./Components/Shared/Loader";
 import BlogCard from "./Components/Blog/BlogCard";
+import Dashboard from "./Dashboard/Dashboard";
+import Login from "./Authendication/Login";
+import AllArticles from "./Dashboard/AllArticles";
+import AddNewArticle from "./Dashboard/AddNewArticle";
+import Settings from "./Dashboard/Settings";
 
 function App() {
   const { dataLoaded } = useContext(pageContent);
@@ -39,6 +44,18 @@ function App() {
             <Route path="/fileupload" element={<FileUpload />}></Route>
             <Route path="/printable-forms" element={<PrintableForms />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
+
+            {/* Dashboard Area  */}
+
+            <Route path="hello/dashboards/login" element={<Login />}></Route>
+            <Route path="hello/dashboards/" element={<Dashboard /> }>
+
+              {/* Sub Routes */}
+            <Route path="allarticles" element={<AllArticles />}></Route>
+            <Route path="addnewarticle" element={<AddNewArticle />}></Route>
+            <Route path="settings" element={<Settings />}></Route>
+            </Route>
+
             <Route path="*" element={<NotFound />}></Route>
           </Routes>
           <Footer></Footer>

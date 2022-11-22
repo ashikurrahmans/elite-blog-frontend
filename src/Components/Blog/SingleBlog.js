@@ -12,8 +12,7 @@ const SingleBlog = () => {
   const { id } = useParams();
   const { fetchBlogSingle, blogSingle, loading } = useContext(allContext);
   useEffect(() => {
-    fetchBlogSingle(id);
-    
+    fetchBlogSingle(id); 
   });
 
 
