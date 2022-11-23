@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 import JoditEditor from "jodit-react";
+import { allContext } from "../ContextApi/ContentProvider";
 
 const AddNewArticle = () => {
+
   const [startDate, setStartDate] = useState(new Date());
   const [contentDescription, setContent] = useState("");
+  const { blogs } = useContext(allContext);
 
   const [inputs, setInputs] = useState({});
 
@@ -22,6 +25,26 @@ const AddNewArticle = () => {
     const value = e.target.value;
     setInputs((values) => ({ ...values, [name]: value }));
   };
+
+
+
+
+  const findCategory = (data, property) => {
+    let newValue = data?.map((currentElm) => {
+      return currentElm[property];
+    });
+    newValue = [...new Set(newValue)];
+    return newValue;
+  };
+
+  const categories = findCategory(blogs, "category");
+
+  // Capitalization the categories 
+
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 
   return (
     <div>
@@ -105,7 +128,10 @@ const AddNewArticle = () => {
                       defaultValue={inputs.category || ""}
                     >
                       <option selected>Choose a category</option>
-                      <option defaultValue="US">United States</option>
+                      {
+                        categories.map(category=> <option defaultValue="US">{capitalizeFirstLetter(category)}</option> )
+                      }
+                      
                     </select>
                   </div>
                   <div className="mb-4">
@@ -126,6 +152,21 @@ const AddNewArticle = () => {
                     />
                   </div>
 
+
+                  <div>
+                <label className=" text-gray-600">
+                      Add new Category <span className="text-red-500 ml-1 text-sm">(Optional)</span>
+                    </label>
+                  <input
+                      type="text"
+                      className="border-2 border-gray-300 p-2 w-full my-4"
+                      name="newcategory"
+                      id="newcategory"
+                      placeholder="Write your new category"
+                      onChange={handleChange}
+                      defaultValue={inputs.newcategory || ""}
+                    />
+                </div>
                   <div className="flex justify-center items-center w-full my-6 ">
                     <label
                       htmlFor="dropzone-file"
@@ -166,9 +207,8 @@ const AddNewArticle = () => {
                   </div>
                 </div>
 
-                <div className="mb-8 ">
-             
-
+                <div className="mb-8">
+    
                   <JoditEditor defaultValue={contentDescription || ""} tabIndex={1} />
                 </div>
 

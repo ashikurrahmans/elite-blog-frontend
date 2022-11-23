@@ -23,11 +23,16 @@ const SidebarCategories = () => {
 //     return count;
 // }
 
+  // Capitalization the categories 
+
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 
   return (
     <>
-      <div className="mb-6 bg-white shadow-md p-2 mt-7 w-72">
+      <div className="mb-6 bg-white shadow-md p-4 mt-7 w-80">
         <h5 className="font-bold text-lg uppercase text-gray-700 px-1 mb-2">
           Popular Topics
         </h5>
@@ -48,7 +53,7 @@ const SidebarCategories = () => {
                   className="flex items-center text-gray-600 cursor-pointer"
                 >
                   <span className="inline-block h-4 w-4 bg-green-300 mr-3"></span>
-                  {category}
+                  {capitalizeFirstLetter(category)}
                   <span className="text-gray-500 ml-auto">1 articles</span>
                   <i className="text-gray-500 bx bx-right-arrow-alt ml-1"></i>
                 </Link>

@@ -15,7 +15,7 @@ const PopularArticles = () => {
       : blogs?.filter((blog) => blog.id !== id);
   return (
     <>
-      <div className="mb-6 bg-white shadow-md p-2 mt-7 lg:w-72 md:w-60 sm:w-48">
+      <div className="mb-6 bg-white shadow-md p-2 mt-7 lg:w-80 md:w-60 sm:w-48">
         <h5 className="font-bold text-lg uppercase text-gray-700 px-1 mb-2">
           Popular Articles
         </h5>
