@@ -29,7 +29,7 @@ const PopularArticles = () => {
                 <span>
                   <Link
                     rel="noopener noreferrer"
-                    to="#"
+                    to={`/blogs/${blog._id}`}
                     className="font-serif hover:underline"
                   >
                     {blog && blog?.title}

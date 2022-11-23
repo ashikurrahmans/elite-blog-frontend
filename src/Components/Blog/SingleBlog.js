@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ShareIcons from "./shred/ShareIcons";
 import SingleBlogCategories from "./shred/SingleBlogCategories";
 import SidebarCategories from "./../Sidebars/SidebarCategories";
@@ -7,9 +7,11 @@ import PopularArticles from "../Sidebars/PopularArticles";
 import Loader from "../Shared/Loader";
 import { useContext, useEffect } from "react";
 import { allContext } from "./../../ContextApi/ContentProvider";
+import Search from "../Sidebars/Search";
 
 const SingleBlog = () => {
   const { id } = useParams();
+  const navigate = useNavigate()
   const { fetchBlogSingle, blogSingle, loading } = useContext(allContext);
   useEffect(() => {
     fetchBlogSingle(id); 
@@ -146,8 +148,9 @@ const {featureImage,title,mainContent,authorName,publishedAt} = blogSingle;
                 </div>
               </div>
             </div>
-
             <div>
+            
+              <Search></Search>
               <SidebarCategories></SidebarCategories>
               <PopularArticles></PopularArticles>
             </div>

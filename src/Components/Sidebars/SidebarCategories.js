@@ -16,14 +16,7 @@ const SidebarCategories = () => {
 
   const categories = findCategory(blogs, "category");
 
-
-//   function getOccurrence(array, value) {
-//     var count = 0;
-//     array.forEach((v) => (v === value && count++));
-//     return count;
-// }
-
-  // Capitalization the categories 
+// Capitalize the First Charecter of the category
 
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);

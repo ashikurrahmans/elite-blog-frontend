@@ -3,10 +3,10 @@ import Categories from "./SidebarCategories";
 import PopularArticles from "./PopularArticles";
 import Search from "./Search";
 
-const Sidebar = () => {
+const Sidebar = ({getUserInput}) => {
   return (
     <>
-      <Search></Search>
+      <Search getUserInput={getUserInput}></Search>
       <Categories></Categories>
       <PopularArticles></PopularArticles>
     </>
