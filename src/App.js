@@ -20,6 +20,7 @@ import Login from "./Authendication/Login";
 import AllArticles from "./Dashboard/AllArticles";
 import AddNewArticle from "./Dashboard/AddNewArticle";
 import Settings from "./Dashboard/Settings";
+import AllDashboards from "./Dashboard/AllDashboards";
 
 function App() {
   const { dataLoaded } = useContext(pageContent);
@@ -50,6 +51,7 @@ function App() {
             <Route path="hello/dashboards/login" element={<Login />}></Route>
             <Route path="hello/dashboards/" element={<Dashboard /> }>
                   {/* Sub Routes */}
+                  <Route path="/hello/dashboards/" element={<AllDashboards />}></Route>
                 <Route path="allarticles" element={<AllArticles />}></Route>
                 <Route path="addnewarticle" element={<AddNewArticle />}></Route>
                 <Route path="settings" element={<Settings />}></Route>

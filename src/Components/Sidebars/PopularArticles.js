@@ -8,6 +8,7 @@ const PopularArticles = () => {
   const { id } = useParams();
   const location = useLocation();
   const { blogs } = useContext(allContext);
+
   const allBlog =
     location.pathname === "/blogs"
       ? blogs?.map((blog) => blog)
@@ -31,7 +32,7 @@ const PopularArticles = () => {
                     to="#"
                     className="font-serif hover:underline"
                   >
-                    {blog && blog?.attributes?.title}
+                    {blog && blog?.title}
                   </Link>
                   <p className="text-xs dark:text-gray-400">
                     47 minutes ago by
@@ -40,7 +41,7 @@ const PopularArticles = () => {
                       to="#"
                       className="hover:underline dark:text-violet-400 ml-1"
                     >
-                      {blog && blog?.attributes?.authorName}
+                      {blog && blog?.authorName}
                     </Link>
                   </p>
                 </span>
