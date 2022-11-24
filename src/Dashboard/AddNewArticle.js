@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
 import JoditEditor from "jodit-react";
 import { allContext } from "../ContextApi/ContentProvider";
 
@@ -143,6 +142,7 @@ const AddNewArticle = () => {
 
                     <DatePicker
                       selected={startDate}
+                      dateFormat="dd/MM/yyyy"
                       onChange={(date) => setStartDate(date)}
                       isClearable
                       placeholderText="I have been cleared!"

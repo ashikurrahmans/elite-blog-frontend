@@ -37,8 +37,7 @@ const {featureImage,title,mainContent,authorName,publishTime} = blogSingle;
         <article className="pb-10 lg:pt-10 lg:pb-20 lg:w-11/12 mx-auto">
           <div
             className="wow fadeInUp relative z-20 mb-[60px] h-[300px] overflow-hidden rounded md:h-[400px] lg:h-[500px]"
-            data-wow-delay=".1s
-              "
+            data-wow-delay=".1s"
           >
             <img
               src={featureImage}
@@ -136,7 +135,7 @@ const {featureImage,title,mainContent,authorName,publishTime} = blogSingle;
               </p>
 
               <div className="-mx-4 mb-12 flex flex-wrap items-center">
-                <SingleBlogCategories />
+                {/* <SingleBlogCategories /> */}
 
                 <div
                   className="wow fadeInUp flex items-center md:justify-end"
