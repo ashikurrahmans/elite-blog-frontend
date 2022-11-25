@@ -25,9 +25,6 @@ const AddNewArticle = () => {
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
-
-
-
   const findCategory = (data, property) => {
     let newValue = data?.map((currentElm) => {
       return currentElm[property];

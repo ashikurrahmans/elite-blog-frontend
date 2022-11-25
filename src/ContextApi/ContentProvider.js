@@ -12,28 +12,60 @@ const ContentProvider = ({ children }) => {
   const [blogSingle, setSingleBlog] = useState([null || ""]);
   const [filterBlogs, setFilterBlog] = useState([]);
 
+
+
+  useEffect(() => {
+    // fetch data
+    setLoading(true)
+    const dataFetch = async () => {
+      const data = await (
+        await fetch(
+          "http://localhost:5000/blogs"
+        )
+      ).json();
+
+      // set state when the data received
+      setBlogs(data);
+      setLoading(false)
+    };
+
+    dataFetch();
+  }, []);
+
+
+
   // Fetching for Blog
-  const fetchBlog = () => {
-    fetch(`http://localhost:5000/blogs`)
-      .then((res) => res.json())
-      .then((data) => setBlogs(data));
-  };
+
+//     const fetchBlog = () => {
+//       setLoading(true)
+//       fetch(`http://localhost:5000/blogs`)
+//         .then((res) => res.json())
+//         .then((data) => {
+//           setBlogs(data)
+//         });
+//         setLoading(false)
+//     };
+// fetchBlog()
+
   // Fetching for Blog
   const fetchBlogSingle = (id) => {
+    setLoading(true);
     fetch(`http://localhost:5000/blogs/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        setLoading(true);
         setSingleBlog(data);
-        setLoading(false);
       });
+      setLoading(false);
   };
 
   // Fetching for categories
 
   const filterValue = (data) => {
+    setLoading(true)
     const filterBlogs = blogs.filter((blog) => blog.category === data);
     setFilterBlog(filterBlogs);
+    setLoading(false)
+
   };
 
   // Category Slug
@@ -43,9 +75,6 @@ const ContentProvider = ({ children }) => {
     return slug
   };
 
-  useEffect(() => {
-    fetchBlog();
-  }, []);
 
   const value = {
     blogs,
