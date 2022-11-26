@@ -3,27 +3,43 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import JoditEditor from "jodit-react";
 import { allContext } from "../ContextApi/ContentProvider";
+import { useForm } from "react-hook-form";
+
+
 
 const AddNewArticle = () => {
 
   const [startDate, setStartDate] = useState(new Date());
-  const [contentDescription, setContent] = useState("");
   const { blogs } = useContext(allContext);
 
-  const [inputs, setInputs] = useState({});
+  const [config,setConfig] = useState({
+    readonly: false,
+    minHeight: 500
+  })
 
-  const postData = { ...inputs, startDate };
 
-  const handleSubmit = (e) => {
-    e.prevenetDefault();
-    alert(postData);
-  };
+  // form handeling 
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const onSubmit = data => fullData(data)
+const [mainConent,setMainContent] = useState("")    
 
-  const handleChange = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setInputs((values) => ({ ...values, [name]: value }));
-  };
+const publishTime = startDate.toLocaleTimeString()
+
+const fullData = (data) =>{
+const addPost = {...data,mainConent,publishTime}
+console.log(addPost)
+}
+
+  // slug
+  const [categorySlug,setCategorySlug]= useState('')
+  const [postSlug,setPostSlug]= useState('')
+
+
+  // const handleChange = (e) => {
+  //   const name = e.target.name;
+  //   const value = e.target.value;
+  //   setInputs((values) => ({ ...values, [name]: value }));
+  // };
 
   const findCategory = (data, property) => {
     let newValue = data?.map((currentElm) => {
@@ -42,13 +58,24 @@ const AddNewArticle = () => {
 }
 
 
+// category handler for making it like title slug
+
+
+const makingCategorySlug = categorySlug.toLowerCase()
+    .replace(/ /g, "-")
+    .replace(/[^\w-]+/g, "");
+
+    const makingPostSlug = postSlug.toLowerCase()
+    .replace(/ /g, "-")
+    .replace(/[^\w-]+/g, "");
+
   return (
-    <div>
+
       <div className="py-12">
         <div className="max-w-full mx-auto sm:px-6 lg:px-8">
           <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div className="p-6 bg-white border-b border-gray-200">
-              <form onSubmit={handleSubmit} method="post">
+              <form  onSubmit={handleSubmit(onSubmit)}>
                 <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-6">
                   <div className="mb-4">
                     <label className="text-xl text-gray-600">
@@ -61,8 +88,9 @@ const AddNewArticle = () => {
                       name="title"
                       id="title"
                       placeholder="Write your title here"
-                      onChange={handleChange}
-                      defaultValue={inputs.title || ""}
+                      {...register("title")}
+                      onChange={(e)=>setPostSlug(e.target.value)}
+
                     />
                   </div>
                   <div className="mb-4">
@@ -73,12 +101,15 @@ const AddNewArticle = () => {
                     <input
                       type="text"
                       className="border-2 border-gray-300 p-2 w-full"
-                      name="slug"
-                      id="slug"
+                      name="titleSlug"
+                      id="titleSlug"
                       placeholder="sample-demo-title"
-                      onChange={handleChange}
-                      defaultValue={inputs.slug || ""}
-                    />
+                      {...register("titleSlug")}
+                      defaultValue={postSlug ? makingPostSlug : "" }
+
+
+
+                />
                   </div>
                   <div className="mb-4">
                     <label className="text-xl text-gray-600">
@@ -91,8 +122,7 @@ const AddNewArticle = () => {
                       name="authorName"
                       id="authorName"
                       placeholder="Write the name of author"
-                      onChange={handleChange}
-                      defaultValue={inputs.authorName || ""}
+                      {...register("authorName")}
                     />
                   </div>
                   {/* // Author Image Choose  */}
@@ -107,8 +137,7 @@ const AddNewArticle = () => {
                       name="authorImage"
                       id="authorImage"
                       placeholder="Choose Your Author Image"
-                      onChange={handleChange}
-                      defaultValue={inputs.authorImage || ""}
+                      {...register("authorImage")}
                     />
                   </div>
                   <div className="mb-4">
@@ -119,13 +148,11 @@ const AddNewArticle = () => {
                     <select
                       id="category"
                       name="category"
-                      onChange={handleChange}
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      defaultValue={inputs.category || ""}
-                    >
-                      <option selected>Choose a category</option>
+                      {...register("category")}                    >
+                      <option  defaultValue="Choose a category">Choose a category</option>
                       {
-                        categories.map(category=> <option defaultValue="US">{capitalizeFirstLetter(category)}</option> )
+                        categories.map((category,index)=> <option key={index} value={category}>{capitalizeFirstLetter(category)}</option> )
                       }
                       
                     </select>
@@ -139,13 +166,15 @@ const AddNewArticle = () => {
 
                     <DatePicker
                       selected={startDate}
+                      minDate={new Date()}
                       dateFormat="dd/MM/yyyy"
                       onChange={(date) => setStartDate(date)}
                       isClearable
                       placeholderText="I have been cleared!"
                       className="border-2 border-gray-300 p-2 w-full"
-                      name="date"
-                      defaultValue={startDate || ""}
+                      name="publishTime"
+                      {...register("publishTime")}
+        
                     />
                   </div>
 
@@ -157,17 +186,33 @@ const AddNewArticle = () => {
                   <input
                       type="text"
                       className="border-2 border-gray-300 p-2 w-full my-4"
-                      name="newcategory"
-                      id="newcategory"
+                      name="newCategory"
+                      id="newCategory"
                       placeholder="Write your new category"
-                      onChange={handleChange}
-                      defaultValue={inputs.newcategory || ""}
+                      {...register("newCategory")}
+                      onChange={(e)=>setCategorySlug(e.target.value)}
+
                     />
+                    <br/>
+                    <span className="relative">
+
+                      <input
+                      type="text"
+                      readOnly={true}
+                      className="border-2 border-gray-300 p-2 w-full my-4"
+                      name="newCategorySlug"
+                      id="newCategorySlug"
+                      placeholder="write-your-category-slug"
+                      {...register("newCategorySlug")}
+                      defaultValue={categorySlug ? makingCategorySlug : "" }
+                      />
+                    </span>
+             
                 </div>
                   <div className="flex justify-center items-center w-full my-6 ">
                     <label
                       htmlFor="dropzone-file"
-                      className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+                      className="flex flex-col items-center justify-center w-full h-22 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
                     >
                       <div className="flex flex-col items-center justify-center pt-5 pb-6">
                         <svg
@@ -194,11 +239,10 @@ const AddNewArticle = () => {
                       </div>
                       <input
                         id="dropzone-file"
-                        onChange={handleChange}
                         type="file"
                         className="hidden"
                         name="featureImage"
-                        defaultValue={inputs.featureImage || ""}
+                        {...register("featureImage")}
                       />
                     </label>
                   </div>
@@ -206,24 +250,17 @@ const AddNewArticle = () => {
 
                 <div className="mb-8">
     
-                  <JoditEditor defaultValue={contentDescription || ""} tabIndex={1} />
+                  <JoditEditor tabIndex={1}  config={config}  onChange={data=> setMainContent(data)}/>
                 </div>
 
                 <div className="flex p-1">
-                  <select
-                    defaultValue={inputs.action || ""}
-                    className="border-2 border-gray-300 border-r p-2"
-                    name="action"
-                  >
-                    <option>Save and Publish</option>
-                    <option>Save Draft</option>
-                  </select>
+            
                   <button
-                    type="submit"
+                     type="submit"
                     className="p-3 bg-blue-500 text-white hover:bg-blue-400"
                     required
                   >
-                    Submit
+                    Published Article
                   </button>
                 </div>
               </form>
@@ -231,7 +268,7 @@ const AddNewArticle = () => {
           </div>
         </div>
       </div>
-    </div>
+
   );
 };
 
