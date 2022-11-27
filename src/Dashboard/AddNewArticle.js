@@ -35,11 +35,7 @@ console.log(addPost)
   const [postSlug,setPostSlug]= useState('')
 
 
-  // const handleChange = (e) => {
-  //   const name = e.target.name;
-  //   const value = e.target.value;
-  //   setInputs((values) => ({ ...values, [name]: value }));
-  // };
+ 
 
   const findCategory = (data, property) => {
     let newValue = data?.map((currentElm) => {

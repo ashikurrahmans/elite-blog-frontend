@@ -21,6 +21,8 @@ import AllArticles from "./Dashboard/AllArticles";
 import AddNewArticle from "./Dashboard/AddNewArticle";
 import Settings from "./Dashboard/Settings";
 import AllDashboards from "./Dashboard/AllDashboards";
+import AllCategoriesDash from "./Dashboard/AllCategoriesDash";
+import AddNewCategoryDash from "./Dashboard/AddNewCategoryDash";
 
 function App() {
   const { dataLoaded } = useContext(pageContent);
@@ -54,6 +56,8 @@ function App() {
                   <Route path="/hello/dashboards/" element={<AllDashboards />}></Route>
                 <Route path="allarticles" element={<AllArticles />}></Route>
                 <Route path="addnewarticle" element={<AddNewArticle />}></Route>
+                <Route path="allcategories" element={<AllCategoriesDash />}></Route>
+                <Route path="addNewCategory" element={<AddNewCategoryDash />}></Route>
                 <Route path="settings" element={<Settings />}></Route>
             </Route>
 

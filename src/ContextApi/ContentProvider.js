@@ -15,6 +15,7 @@ const ContentProvider = ({ children }) => {
   const [showAllCategories,setShowAllCategories] = useState([])
 
 
+
   useEffect(() => {
     // fetch data
     setLoading(true)
