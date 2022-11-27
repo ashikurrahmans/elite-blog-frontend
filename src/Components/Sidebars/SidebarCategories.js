@@ -1,25 +1,33 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
 import { allContext } from "../../ContextApi/ContentProvider";
 
 const SidebarCategories = () => {
-  const { blogs,filterValue,contentSlug } = useContext(allContext);
+  const {blogs, allCategories,showCategory } = useContext(allContext);
 
-  const findCategory = (data, property) => {
+  // Capitalize the categories  (first & after space)
+  function capitalizeFirstLetter(string) {
+    const arr = string.split(" ");
+    for (var i = 0; i < arr.length; i++) {
+        arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+    }
+    const str2 = arr.join(" ");
+   return str2
+  }
+
+  const AfindCategory = (data, property) => {
     let newValue = data?.map((currentElm) => {
-      // contentSlug(currentElm[property])
-      return currentElm[property];
+      const category = currentElm[property];
+      const afterCapitalize = capitalizeFirstLetter(category)
+      if (afterCapitalize) {
+        return afterCapitalize;
+      }
     });
     newValue = [...new Set(newValue)];
     return newValue;
   };
+  const ourCategories = AfindCategory(allCategories, "categoryName");
 
-  const categories = findCategory(blogs, "category");
 
-  // Capitalize the First Charecter of the category
-  function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
 
 
   return (
@@ -31,26 +39,23 @@ const SidebarCategories = () => {
 
         {
           <ul>
-            {categories.length <= 0 ? (
+            {ourCategories.length <= 0 ? (
               <div style={{ color: "red" }}>
                 <h4>Categories not available </h4>
               </div>
             ) : (
-              categories?.map((category, index) => (
+              ourCategories?.map((category,index) => (
                 <li
-                  key={category[index]}
-                  onClick={() => filterValue(category)}
+                key={index}
+                  onClick={() => showCategory(category)}
                   className="px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300"
                 >
-                  <Link
-                    to={`/categories/${contentSlug(category)}`}
-                    className="flex items-center text-gray-600 cursor-pointer"
-                  >
+                  <span className="flex items-center text-gray-600 cursor-pointer">
                     <span className="inline-block h-4 w-4 bg-green-300 mr-3"></span>
-                    {capitalizeFirstLetter(category)}
+                    {category}
                     <span className="text-gray-500 ml-auto">1 articles</span>
                     <i className="text-gray-500 bx bx-right-arrow-alt ml-1"></i>
-                  </Link>
+                  </span>
                 </li>
               ))
             )}

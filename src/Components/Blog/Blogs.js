@@ -6,7 +6,7 @@ import Loader from "../Shared/Loader";
 import { allContext } from "../../ContextApi/ContentProvider";
 
 const Blogs = () => {
-const {blogs,loading} = useContext(allContext)
+const {blogs,loading,showAllCategories} = useContext(allContext)
 const [filterData,setFilterData] = useState([])
 const [showPerPage,setShowPerpage] = useState(5)
 const [pagination,setPagination] = useState({
@@ -39,10 +39,17 @@ const changePagination = (start,end) =>{
       ) : (
         <section className="container mx-auto flex flex-wrap py-6">
           <div className="w-full lg:w-9/12 md:w-9/12 sm:12/12 flex flex-col items-center px-3">
-            {filterData.length <= 0 ?  <h1 className="text-center text-red-800 text-5xl font-bold my-40 bg-white shadow-lg p-40">No Data Found!</h1>  : 
-             filterData?.slice(pagination.start,pagination.end).map((blog) => {
+           
+           {
+            showAllCategories.length ? showAllCategories?.map((blog) => {
               return <BlogCard blog={blog} key={blog?._id}></BlogCard>;
-            })}
+            }) : filterData.length <= 0 ?  <h1 className="text-center text-red-800 text-5xl font-bold my-40 bg-white shadow-lg p-40">No Data Found!</h1>  : 
+            filterData?.slice(pagination.start,pagination.end).map((blog) => {
+             return <BlogCard blog={blog} key={blog?._id}></BlogCard>;
+           })
+           }
+           
+            {}
             <Pagination showPerPage={showPerPage} changePagination={changePagination} total={blogs?.length}></Pagination>
           </div>
           <div className="lg:block md:block sm:none lg:w-3/12 w-9/12 sm:12/12">

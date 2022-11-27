@@ -11,7 +11,8 @@ const ContentProvider = ({ children }) => {
   const [blogs, setBlogs] = useState([]);
   const [blogSingle, setSingleBlog] = useState([null || ""]);
   const [filterBlogs, setFilterBlog] = useState([]);
-
+  const [allCategories,setAllCategories] = useState([])
+  const [showAllCategories,setShowAllCategories] = useState([])
 
 
   useEffect(() => {
@@ -47,6 +48,7 @@ const ContentProvider = ({ children }) => {
 //     };
 // fetchBlog()
 
+
   // Fetching for Blog
   const fetchBlogSingle = (id) => {
     setLoading(true);
@@ -65,8 +67,20 @@ const ContentProvider = ({ children }) => {
     const filterBlogs = blogs.filter((blog) => blog.category === data);
     setFilterBlog(filterBlogs);
     setLoading(false)
-
   };
+
+
+    // Fetching for All Categories
+    const findAllCategories = () => {
+      setLoading(true);
+      fetch(`http://localhost:5000/categories`)
+        .then((res) => res.json())
+        .then((data) => {
+          setAllCategories(data);
+        });
+        setLoading(false);
+    };
+
 
   // Category Slug
 
@@ -76,6 +90,19 @@ const ContentProvider = ({ children }) => {
   };
 
 
+
+ // categoryClick show blogs 
+
+ const showCategory = (data) =>{
+  const categoryLower = data.toLowerCase()
+  const catPD = blogs.filter(cat=> cat?.category === categoryLower) 
+  setShowAllCategories(catPD)
+ }
+
+  useEffect(()=>{
+    findAllCategories()
+  },[])
+
   const value = {
     blogs,
     loading,
@@ -84,6 +111,10 @@ const ContentProvider = ({ children }) => {
     filterValue,
     filterBlogs,
     contentSlug,
+    allCategories,
+    showAllCategories,
+    showCategory
+
   };
 
   return <allContext.Provider value={value}>{children}</allContext.Provider>;
