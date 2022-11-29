@@ -5,7 +5,7 @@ const SingleServiceBulletsSection = () => {
   let checkIcon = (
     <span>
       {/* <FiCheckCircle
-        style={{
+        Style={{
           display: "inline",
           marginRight: "6px",
           fontSize: "22px",

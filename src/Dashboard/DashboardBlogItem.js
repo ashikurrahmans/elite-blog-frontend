@@ -198,7 +198,7 @@ const DashboardBlogItem = ({blog}) => {
                         </div>
                       </td>
     
-                      <td>
+                      {/* <td>
                         <div className="relative px-5 pt-2">
                           <button
                             className="focus:ring-2 rounded-md focus:outline-none"
@@ -250,6 +250,9 @@ const DashboardBlogItem = ({blog}) => {
                             </div>
                           </div>
                         </div>
+                      </td> */}
+                      <td>
+                      <button className=" bg-pink-700 mr-3 text-white p-2 rounded-lg">Delete</button>
                       </td>
                     </tr>
                   </tbody>

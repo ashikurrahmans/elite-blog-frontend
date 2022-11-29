@@ -10,42 +10,48 @@ import { useForm } from "react-hook-form";
 const AddNewArticle = () => {
 
   const [startDate, setStartDate] = useState(new Date());
-  const { blogs } = useContext(allContext);
+  const { blogs,allCategories } = useContext(allContext);
+
+const [postSlug,setPostSlug]= useState('') // Slug
+
 
   const [config,setConfig] = useState({
     readonly: false,
     minHeight: 500
   })
 
-
   // form handeling 
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
   const onSubmit = data => fullData(data)
 const [mainConent,setMainContent] = useState("")    
 
-const publishTime = startDate.toLocaleTimeString()
-
+const publishTime = startDate.toLocaleDateString()
 const fullData = (data) =>{
-const addPost = {...data,mainConent,publishTime}
-console.log(addPost)
-}
+  
+  const authorImg = (data.authorImage[0])
+  const featuredImg = (data.featureImage[0])
+
+  
+  const addPost = {...data,mainConent,publishTime}
+  console.log((addPost))
+ }
+
+
+
+
+
 
   // slug
-  const [categorySlug,setCategorySlug]= useState('')
-  const [postSlug,setPostSlug]= useState('')
+  // const [categorySlug,setCategorySlug]= useState('')
+  // const findCategory = (data, property) => {
+  //   let newValue = data?.map((currentElm) => {
+  //     return currentElm[property];
+  //   });
+  //   newValue = [...new Set(newValue)];
+  //   return newValue;
+  // };
 
-
- 
-
-  const findCategory = (data, property) => {
-    let newValue = data?.map((currentElm) => {
-      return currentElm[property];
-    });
-    newValue = [...new Set(newValue)];
-    return newValue;
-  };
-
-  const categories = findCategory(blogs, "category");
+  // const categories = findCategory(blogs, "category");
 
   // Capitalization the categories 
 
@@ -56,14 +62,11 @@ console.log(addPost)
 
 // category handler for making it like title slug
 
-
-const makingCategorySlug = categorySlug.toLowerCase()
-    .replace(/ /g, "-")
-    .replace(/[^\w-]+/g, "");
-
     const makingPostSlug = postSlug.toLowerCase()
     .replace(/ /g, "-")
     .replace(/[^\w-]+/g, "");
+
+
 
   return (
 
@@ -101,10 +104,7 @@ const makingCategorySlug = categorySlug.toLowerCase()
                       id="titleSlug"
                       placeholder="sample-demo-title"
                       {...register("titleSlug")}
-                      defaultValue={postSlug ? makingPostSlug : "" }
-
-
-
+                      value={postSlug ? makingPostSlug : "" }
                 />
                   </div>
                   <div className="mb-4">
@@ -124,7 +124,7 @@ const makingCategorySlug = categorySlug.toLowerCase()
                   {/* // Author Image Choose  */}
                   <div className="mb-4">
                     <label className="text-xl text-gray-600">
-                      Author Image <span className="text-red-500">*</span>
+                      Author Image <span className="text-sm text-red-500 ml-2">(optional)</span>
                     </label>
                     <br />
                     <input
@@ -144,11 +144,12 @@ const makingCategorySlug = categorySlug.toLowerCase()
                     <select
                       id="category"
                       name="category"
+                      {...register("category")}
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      {...register("category")}                    >
+                       >
                       <option  defaultValue="Choose a category">Choose a category</option>
                       {
-                        categories.map((category,index)=> <option key={index} value={category}>{capitalizeFirstLetter(category)}</option> )
+                        allCategories?.map((category,index)=> <option key={index} value={category?.categoryName}>{capitalizeFirstLetter(category?.categoryName)}</option> )
                       }
                       
                     </select>
@@ -175,36 +176,7 @@ const makingCategorySlug = categorySlug.toLowerCase()
                   </div>
 
 
-                  <div>
-                <label className=" text-gray-600">
-                      Add new Category <span className="text-red-500 ml-1 text-sm">(Optional)</span>
-                    </label>
-                  <input
-                      type="text"
-                      className="border-2 border-gray-300 p-2 w-full my-4"
-                      name="newCategory"
-                      id="newCategory"
-                      placeholder="Write your new category"
-                      {...register("newCategory")}
-                      onChange={(e)=>setCategorySlug(e.target.value)}
-
-                    />
-                    <br/>
-                    <span className="relative">
-
-                      <input
-                      type="text"
-                      readOnly={true}
-                      className="border-2 border-gray-300 p-2 w-full my-4"
-                      name="newCategorySlug"
-                      id="newCategorySlug"
-                      placeholder="write-your-category-slug"
-                      {...register("newCategorySlug")}
-                      defaultValue={categorySlug ? makingCategorySlug : "" }
-                      />
-                    </span>
-             
-                </div>
+      
                   <div className="flex justify-center items-center w-full my-6 ">
                     <label
                       htmlFor="dropzone-file"
@@ -226,7 +198,7 @@ const makingCategorySlug = categorySlug.toLowerCase()
                           ></path>
                         </svg>
                         <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                          <span className="font-semibold">Click to upload</span>{" "}
+                          <span className="font-semibold">Click to upload</span>
                           or drag and drop
                         </p>
                         <p className="text-xs text-gray-500 dark:text-gray-400">
@@ -239,7 +211,7 @@ const makingCategorySlug = categorySlug.toLowerCase()
                         className="hidden"
                         name="featureImage"
                         {...register("featureImage")}
-                      />
+                        />
                     </label>
                   </div>
                 </div>

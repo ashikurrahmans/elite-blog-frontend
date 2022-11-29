@@ -57,15 +57,17 @@ const AllArticles = () => {
                 <th>Published Date</th>
                 <th>Comments</th>
                 <th>Post Updated</th>
+                <th>Delete</th>
+
               </tr>
             </thead>
 
             {loading ? (
               <Loader />
-            ) : blogs.length <= 0 ? (
+            ) : blogs?.length <= 0 ? (
               '<h1 className="text-2xl font-bold text-red-700">No Articles Available</h1>'
             ) : (
-                blogs.map(blog=>  ( <DashboardBlogItem key={blog._id} blog={blog}/>))
+                blogs?.map(blog=> ( <DashboardBlogItem key={blog._id} blog={blog}/>))
             
             )}
           </table>

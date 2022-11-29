@@ -6,16 +6,15 @@ import AddNewCategoryDash from "./AddNewCategoryDash";
 const AllCategoriesDash = () => {
   const { allCategories } = useContext(allContext);
 
-  const AfindCategory = (data, property) => {
-    let newValue = data?.map((currentElm) => {
-      const category = currentElm[property];
-   return category
-    });
-    newValue = [...new Set(newValue)];
-    return newValue;
-  };
-  const ourCategories = AfindCategory(allCategories, "categoryName");
-  console.log(ourCategories);
+  // const AfindCategory = (data, property) => {
+  //   let newValue = data?.map((currentElm) => {
+  //     const category = currentElm[property];
+  //  return category
+  //   });
+  //   newValue = [...new Set(newValue)];
+  //   return newValue;
+  // };
+  // const ourCategories = AfindCategory(allCategories, "categoryName");
 
   return (
     <>
@@ -29,7 +28,7 @@ const AllCategoriesDash = () => {
         <div></div>
 
       <Link to={"/hello/dashboards/addnewcategory"}>
-      <button className="bg-[#0EF059] text-white font-medium px-4 py-2 rounded-md flex gap-1 items-center text-black">
+      <button className="bg-[#0EF059] font-medium px-4 py-2 rounded-md flex gap-1 items-center text-black">
           Add New Category
         </button>
       </Link>

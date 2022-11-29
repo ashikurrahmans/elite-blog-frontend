@@ -40,7 +40,7 @@ const SidebarCategories = () => {
         {
           <ul>
             {ourCategories.length <= 0 ? (
-              <div style={{ color: "red" }}>
+              <div Style={{ color: "red" }}>
                 <h4>Categories not available </h4>
               </div>
             ) : (

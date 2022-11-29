@@ -11,8 +11,8 @@ const ContentProvider = ({ children }) => {
   const [blogs, setBlogs] = useState([]);
   const [blogSingle, setSingleBlog] = useState([null || ""]);
   const [filterBlogs, setFilterBlog] = useState([]);
-  const [allCategories,setAllCategories] = useState([])
-  const [showAllCategories,setShowAllCategories] = useState([])
+  const [allCategories,setAllCategories] = useState([]) // include category by fetch
+  const [showAllCategories,setShowAllCategories] = useState([]) // Filter 
 
 
 
