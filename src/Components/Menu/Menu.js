@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../src/assets/images/elitedentalstudiousalogo.png";
-// import { GiHamburgerMenu } from "react-icons/gi";
+import { GiHamburgerMenu } from "react-icons/gi";
 // import Switch from "react-switch";
 // import Themes from "./../ThemeColor/Themes";
 
@@ -23,7 +23,7 @@ const Menu = () => {
               onClick={() => setNavbarOpen(!navbarOpen)}
             >
               {/* <i className="fas fa-bars"></i> */}
-              {/* <GiHamburgerMenu Style={{ color: "white" }}></GiHamburgerMenu> */}
+              <GiHamburgerMenu style={{ color: "white" }}></GiHamburgerMenu>
             </button>
           </div>
           <div
