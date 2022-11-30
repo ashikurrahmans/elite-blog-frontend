@@ -1,8 +1,8 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { allContext } from "../../ContextApi/ContentProvider";
 
 const SidebarCategories = () => {
-  const {blogs, allCategories,showCategory } = useContext(allContext);
+  const { allCategories,showCategory } = useContext(allContext);
 
   // Capitalize the categories  (first & after space)
   function capitalizeFirstLetter(string) {
@@ -40,7 +40,7 @@ const SidebarCategories = () => {
         {
           <ul>
             {ourCategories.length <= 0 ? (
-              <div Style={{ color: "red" }}>
+              <div style={{ color: "red" }}>
                 <h4>Categories not available </h4>
               </div>
             ) : (

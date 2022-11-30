@@ -99,7 +99,7 @@ const FacebookPageLike = () => {
               </div>
 
               <div className="flex flex-row flex-auto justify-end">
-                <span class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-[#1877F2] rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                <span className="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-[#1877F2] rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                   <AiOutlineLike className="text-lg mr-2" />
                   Like Our Page
                 </span>

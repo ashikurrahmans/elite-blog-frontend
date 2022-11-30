@@ -119,7 +119,7 @@ const AllDashboards = () => {
                         <div className="w-full bg-gray-200 rounded-sm h-2">
                           <div
                             className="bg-cyan-600 h-2 rounded-sm"
-                            Style="width: 30%"
+                            style={{width: "30%"}}
                           ></div>
                         </div>
                       </div>
@@ -140,7 +140,7 @@ const AllDashboards = () => {
                         <div className="w-full bg-gray-200 rounded-sm h-2">
                           <div
                             className="bg-orange-300 h-2 rounded-sm"
-                            Style="width: 24%"
+                            style={{width: "24%"}}
                           ></div>
                         </div>
                       </div>
@@ -161,7 +161,7 @@ const AllDashboards = () => {
                         <div className="w-full bg-gray-200 rounded-sm h-2">
                           <div
                             className="bg-teal-400 h-2 rounded-sm"
-                            Style="width: 18%"
+                            style={{width: "18%"}}
                           ></div>
                         </div>
                       </div>
@@ -182,7 +182,7 @@ const AllDashboards = () => {
                         <div className="w-full bg-gray-200 rounded-sm h-2">
                           <div
                             className="bg-pink-600 h-2 rounded-sm"
-                            Style="width: 12%"
+                            style={{width: "12%"}}
                           ></div>
                         </div>
                       </div>
@@ -203,7 +203,7 @@ const AllDashboards = () => {
                         <div className="w-full bg-gray-200 rounded-sm h-2">
                           <div
                             className="bg-indigo-600 h-2 rounded-sm"
-                            Style="width: 9%"
+                            style={{width: "9%"}}
                           ></div>
                         </div>
                       </div>
@@ -224,7 +224,7 @@ const AllDashboards = () => {
                         <div className="w-full bg-gray-200 rounded-sm h-2">
                           <div
                             className="bg-purple-500 h-2 rounded-sm"
-                            Style="width: 7%"
+                            style={{width: "7%"}}
                           ></div>
                         </div>
                       </div>

@@ -56,7 +56,6 @@ const AddNewArticle = () => {
   const publishTime = startDate.toLocaleDateString();
 
   const fullData = (data) => {
-    console.log(featureImage);
     const addPost = { ...data, mainConent, publishTime, featureImage ,titleSlug};
     console.log(addPost);
   };
@@ -66,9 +65,6 @@ const AddNewArticle = () => {
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
-
-
-
 
 
 
@@ -217,11 +213,15 @@ const AddNewArticle = () => {
                   </label>
                 </div>
                 <div>
-                     <img
-                        src={featureImage && featureImage}
-                        alt="feature"
-                        className="w-[700px] h-[500px] relative "
-                      ></img>
+                   {
+                    featureImage && (
+                      <img
+                      src={featureImage && featureImage}
+                      alt="feature"
+                      className="w-[700px] h-[500px] relative "
+                    ></img>
+                    )
+                   }
                 </div>
               </div>
 
