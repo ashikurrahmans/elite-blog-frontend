@@ -2,10 +2,9 @@ import { React, useContext, useRef } from "react";
 import PageTitle from "../PageTitle/PageTitle";
 import BredCumbs from "./../Shared/BredCumbs";
 // import emailjs from "@emailjs/browser";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useState } from "react";
-import { useEffect } from "react";
+
 import IconBox from "./IconBox";
 import GoogleMap from "./GoogleMap";
 import { pageContent } from "../../ContextApi/PagesContext";
@@ -36,7 +35,6 @@ const Contact = () => {
 
   const {contactContent} = useContext(pageContent)
 
-  console.log(contactContent)
   const {
     contactTitle,
     contactDescription,

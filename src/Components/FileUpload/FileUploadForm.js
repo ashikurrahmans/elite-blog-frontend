@@ -11,7 +11,7 @@ const FileUploadForm = () => {
                 Choose Your File
               </label>
               <input
-                tabindex="0"
+                tabIndex="0"
                 type="file"
                 className="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100"
               />
@@ -21,7 +21,7 @@ const FileUploadForm = () => {
                 Email Address
               </label>
               <input
-                tabindex="0"
+                tabIndex="0"
                 arial-label="Please input email address"
                 type="name"
                 className="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100"
@@ -35,7 +35,7 @@ const FileUploadForm = () => {
                 Doctors First Name
               </label>
               <input
-                tabindex="0"
+                tabIndex="0"
                 arial-label="Please input company name"
                 type="name"
                 className="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100"
@@ -47,7 +47,7 @@ const FileUploadForm = () => {
                 Doctors Last Name
               </label>
               <input
-                tabindex="0"
+                tabIndex="0"
                 arial-label="Please input country name"
                 type="name"
                 className="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100"
@@ -61,7 +61,7 @@ const FileUploadForm = () => {
                 Message
               </label>
               <textarea
-                tabindex="0"
+                tabIndex="0"
                 aria-label="leave a message"
                 type="name"
                 className="h-36 text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100 resize-none"

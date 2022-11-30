@@ -4,7 +4,7 @@ import { allContext } from "../ContextApi/ContentProvider";
 import Loader from "../Components/Shared/Loader";
 import DashboardBlogItem from "./DashboardBlogItem";
 
-const AllArticles = () => {
+const AllArticlesDash = () => {
   const { blogs, loading } = useContext(allContext);
   return (
     <>
@@ -77,4 +77,4 @@ const AllArticles = () => {
   );
 };
 
-export default AllArticles;
+export default AllArticlesDash;

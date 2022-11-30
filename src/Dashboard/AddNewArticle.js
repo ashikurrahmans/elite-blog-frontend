@@ -9,25 +9,26 @@ const AddNewArticle = () => {
   const { allCategories } = useContext(allContext);
   const [startDate, setStartDate] = useState(new Date());
   const [featureImage, setfeatureImage] = useState(null); // Image Current url after upload
-
   const [postSlug, setPostSlug] = useState(""); // Slug
-
 
   const titleSlug = postSlug
     .toLowerCase()
     .replace(/ /g, "-")
     .replace(/[^\w-]+/g, "");
 
-
-
   const uploadImage = async (e) => {
-    var file = e.target.files[0];
-    var formdata = new FormData();
+setfeatureImage(URL.createObjectURL(e.target.files[0]));
+  };
 
+const handleUploadImage = async(e) =>{
+
+    const file = e.target.files[0]
+    var formdata = new FormData();
+  
     formdata.append("file", file);
     formdata.append("cloud_name", "dbpiftrij");
     formdata.append("upload_preset", "mpght7ap");
-
+  
     let res = await fetch(
       "https://api.cloudinary.com/v1_1/dbpiftrij/auto/upload",
       {
@@ -37,26 +38,30 @@ const AddNewArticle = () => {
       }
     );
     let json = await res.json();
-    setfeatureImage(json.secure_url);
-  };
+    console.log(json.secure_url);
 
-  const [config ] = useState({
+}
+
+  const [config] = useState({
     readonly: false,
     minHeight: 500,
   });
 
   // form handeling
-  const {
-    register,
-    handleSubmit,
-  } = useForm();
+  const { register, handleSubmit } = useForm();
   const onSubmit = (data) => fullData(data);
   const [mainConent, setMainContent] = useState("");
 
   const publishTime = startDate.toLocaleDateString();
 
   const fullData = (data) => {
-    const addPost = { ...data, mainConent, publishTime, featureImage ,titleSlug};
+    const addPost = {
+      ...data,
+      mainConent,
+      publishTime,
+      featureImage,
+      titleSlug,
+    };
     console.log(addPost);
   };
 
@@ -65,8 +70,6 @@ const AddNewArticle = () => {
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
-
-
 
   // ===============================================================================
 
@@ -147,7 +150,6 @@ const AddNewArticle = () => {
                     Choose publish date
                     <span className="text-red-500">*</span>
                   </label>
-                  <br />
 
                   <DatePicker
                     selected={startDate}
@@ -160,6 +162,33 @@ const AddNewArticle = () => {
                     name="publishTime"
                   />
                 </div>
+                <div className="mb-8">
+                  <div>
+                    <label className="text-xl text-gray-600">
+                      Choose your feature Image
+                      <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="file"
+                      name="featureImage"
+                      id="featureImage"
+                      className="border-2 border-gray-300 p-2 w-full"
+                      onChange={uploadImage}
+                    />
+                  </div>
+                </div>
+
+                {
+                  <div>
+                    {featureImage && (
+                      <img
+                        src={featureImage && featureImage}
+                        alt="feature"
+                        className="w-full h-[500px] mb-20 "
+                      ></img>
+                    )}
+                  </div>
+                }
               </div>
 
               <div className="mb-8">
@@ -169,65 +198,11 @@ const AddNewArticle = () => {
                   onChange={(data) => setMainContent(data)}
                 />
               </div>
-              <div className="grid lg:grid-cols-2 sm:grid-cols-1">
-                <div className="flex justify-center items-center w-full my-6">
-                  <label
-                    htmlFor="dropzone-file"
-                    className="flex flex-col items-center justify-center w-full h-22 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer"
-                  >
-                    <div className="mb-8 relative">
-                      <div>
-                        <input
-                          type="file"
-                          name="featureImage"
-                          id="featureImage"
-                          className="sr-only"
-                          onChange={uploadImage}
-                          
-                        />
-                      </div>
-              
-                      <label
-                        htmlFor="file"
-                        className=" flex min-h-[300px] items-center justify-center  p-12 text-center"
-                      >
-                        <div>
-                          <span className="mb-2 block text-xl font-semibold text-[#07074D]">
-                            Drop files here
-                          </span>
-                          <span className="mb-2 block text-base font-medium text-[#6B7280]">
-                            Or
-                          </span>
-                          <button className="inline-flex rounded border border-[#e0e0e0] py-2 px-7 text-base font-medium text-[#07074D]">
-                            Browse
-                          </button>
-                        </div>
-                      </label>
-                    </div>
-                    <input
-                      id="dropzone-file"
-                      type="file"
-                      className="hidden"
-                      name="featureImage"
-                    />
-                  </label>
-                </div>
-                <div>
-                   {
-                    featureImage && (
-                      <img
-                      src={featureImage && featureImage}
-                      alt="feature"
-                      className="w-[700px] h-[500px] relative "
-                    ></img>
-                    )
-                   }
-                </div>
-              </div>
 
               <div className="flex p-1 my-16">
                 <button
                   type="submit"
+                  onClick={handleUploadImage}
                   className="p-3 bg-blue-500 text-white hover:bg-blue-400"
                   required
                 >
