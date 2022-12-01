@@ -133,7 +133,7 @@ const DashboardBlogItem = ({blog,deleteBlog}) => {
                             ></path>
                           </svg>
                           <p className="text-sm leading-none text-gray-600 ml-2">
-                            04/07
+                           {blog?.publishTime}
                           </p>
                         </div>
                       </td>
@@ -198,7 +198,7 @@ const DashboardBlogItem = ({blog,deleteBlog}) => {
                             ></path>
                           </svg>
                           <p className="text-sm leading-none text-gray-600 ml-2">
-                            04/07
+                            times
                           </p>
                         </div>
                       </td>

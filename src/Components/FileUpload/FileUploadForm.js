@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+
+
 
 const FileUploadForm = () => {
+  const [imageSrc,setImageSrc] = useState("")
+
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data) => postData(data);
+
+
+  const postData = (data) => {
+    const contants = {...data,imageSrc}
+    console.log(contants)
+  }
+
   return (
     <>
       <div className="w-full flex items-center justify-center my-12">
+        <form  onSubmit={handleSubmit(onSubmit)}>
         <div className=" bg-white dark:bg-gray-800  lg:px-28 px-8">
           <div className="md:flex items-center">
             <div className="md:w-72 flex flex-col">
@@ -13,6 +28,7 @@ const FileUploadForm = () => {
               <input
                 tabIndex="0"
                 type="file"
+                onClick={(e) => setImageSrc(e.target.files[0])}
                 className="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100"
               />
             </div>
@@ -23,7 +39,8 @@ const FileUploadForm = () => {
               <input
                 tabIndex="0"
                 arial-label="Please input email address"
-                type="name"
+                type="email"
+                {...register("email")}
                 className="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100"
                 placeholder="Please input email address"
               />
@@ -37,7 +54,8 @@ const FileUploadForm = () => {
               <input
                 tabIndex="0"
                 arial-label="Please input company name"
-                type="name"
+                type="firstName"
+                {...register("firstName")}
                 className="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100"
                 placeholder="Please input company name"
               />
@@ -49,7 +67,8 @@ const FileUploadForm = () => {
               <input
                 tabIndex="0"
                 arial-label="Please input country name"
-                type="name"
+                type="lastName"
+                {...register("lastName")}
                 className="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100"
                 placeholder="Please input country name"
               />
@@ -63,7 +82,8 @@ const FileUploadForm = () => {
               <textarea
                 tabIndex="0"
                 aria-label="leave a message"
-                type="name"
+                type="contents"
+                {...register("contents")}
                 className="h-36 text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-100 resize-none"
               ></textarea>
             </div>
@@ -73,8 +93,10 @@ const FileUploadForm = () => {
             <button className="mt-9 text-base font-semibold leading-none text-white py-4 px-10 bg-[#83cf25] rounded hover:bg-[#62ae05] focus:ring-2 focus:ring-offset-2 focus:bg-[#6DB417] focus:outline-none">
               SUBMIT
             </button>
-          </div>
         </div>
+          </div>
+        </form>
+       
       </div>
     </>
   );

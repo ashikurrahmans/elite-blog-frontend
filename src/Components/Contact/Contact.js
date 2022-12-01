@@ -1,37 +1,26 @@
-import { React, useContext, useRef } from "react";
+import { useContext, useRef } from "react";
 import PageTitle from "../PageTitle/PageTitle";
 import BredCumbs from "./../Shared/BredCumbs";
-// import emailjs from "@emailjs/browser";
-import { ToastContainer } from "react-toastify";
+import emailjs from "@emailjs/browser";
 import "react-toastify/dist/ReactToastify.css";
-
+import {toast} from 'react-toastify'
 import IconBox from "./IconBox";
 import GoogleMap from "./GoogleMap";
 import { pageContent } from "../../ContextApi/PagesContext";
 
 const Contact = () => {
-  let form = useRef();
+  const form = useRef();
 
-  // const sendEmail = (e) => {
-  //   e.preventDefault();
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-  //   emailjs
-  //     .sendForm(
-  //       "service_pi7hzkr",
-  //       "template_c6y6nys",
-  //       form.current,
-  //       "UWPT-zbO6jI5U64NU"
-  //     )
-  //     .then(
-  //       (result) => {
-  //         toast.success("Sending Email");
-  //       },
-  //       (error) => {
-  //         toast.error("Sending Failed");
-  //       }
-  //     );
-  // };
-
+    emailjs.sendForm('service_z2t0pyk', 'template_i06l92g', form.current, 'UWPT-zbO6jI5U64NU')
+      .then((result) => {
+          toast.success("Email Send Successfully",result)
+      }, (error) => {
+          toast.error("Something is wrong")
+      });
+  };
 
   const {contactContent} = useContext(pageContent)
 
@@ -70,8 +59,8 @@ const Contact = () => {
             <p className="leading-relaxed mb-5 text-gray-600">
               {feedBackDescription}
             </p>
-            {/* onSubmit={sendEmail} */}
-            <form ref={form} > 
+       
+            <form ref={form} onSubmit={sendEmail} > 
               <div className="relative mb-4">
                 <label
                   htmlFor="name"
@@ -123,7 +112,6 @@ const Contact = () => {
           </div>
         </div>
       </section>
-      <ToastContainer />
     </div>
   );
 };
