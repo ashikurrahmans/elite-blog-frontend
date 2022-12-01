@@ -1,11 +1,36 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { allContext } from "../ContextApi/ContentProvider";
 import Loader from "../Components/Shared/Loader";
 import DashboardBlogItem from "./DashboardBlogItem";
+import { toast } from "react-toastify";
 
 const AllArticlesDash = () => {
   const { blogs, loading } = useContext(allContext);
+  const [afterDeleteBlog, setAfterDeleteBlog] = useState([]);
+
+  const deleteBlog = (id) => {
+    const proceed = window.confirm("Really you want to delete?");
+    if (proceed) {
+      fetch(`http://localhost:5000/blogs/${id}`, {
+        method: "DELETE",
+      })
+        .then((data) => data.json())
+        .then((data) => {
+          // setShowModal(false)
+          if (data.deletedCount > 0) {
+            const remaining = blogs.filter((items) => items._id !== id);
+            setAfterDeleteBlog(remaining);
+            toast.success("Blog Deleted");
+          }
+        });
+    }
+  };
+
+
+const noDataFound =  <h1 className="text-2xl font-bold text-red-700"> No Articles Available </h1>
+
+
   return (
     <>
       <div className="bg-white py-4 md:py-7 px-4 md:px-8 xl:px-10">
@@ -58,17 +83,29 @@ const AllArticlesDash = () => {
                 <th>Comments</th>
                 <th>Post Updated</th>
                 <th>Delete</th>
-
               </tr>
             </thead>
 
             {loading ? (
               <Loader />
             ) : blogs?.length <= 0 ? (
-              '<h1 className="text-2xl font-bold text-red-700">No Articles Available</h1>'
+             noDataFound 
+            ) : afterDeleteBlog.length ? (
+              afterDeleteBlog?.map((blog) => (
+                <DashboardBlogItem
+                  key={blog._id}
+                  blog={blog}
+                  deleteBlog={deleteBlog}
+                />
+              ))
             ) : (
-                blogs?.map(blog=> ( <DashboardBlogItem key={blog._id} blog={blog}/>))
-            
+              blogs?.map((blog) => (
+                <DashboardBlogItem
+                  key={blog._id}
+                  blog={blog}
+                  deleteBlog={deleteBlog}
+                />
+              ))
             )}
           </table>
         </div>

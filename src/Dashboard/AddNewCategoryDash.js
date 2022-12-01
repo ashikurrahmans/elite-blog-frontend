@@ -1,11 +1,13 @@
 import React, {  useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 
 
 
 const AddNewCategoryDash = () => {
   const [titleToCategorySlug, setTitleToCategorySlug] = useState("");
+  const navigate = useNavigate()
  
   const categorySlug = titleToCategorySlug
     .toLowerCase()
@@ -30,10 +32,11 @@ const AddNewCategoryDash = () => {
         })
         .then(data=>data.json())
         .then(()=> {
+          navigate('/hello/dashboards/allcategories')
           toast.success("New Category Added")
-
         })       
       }
+
 
 
   return (

@@ -1,7 +1,9 @@
+// import { toast } from "react-toastify";
 
 const DeletePopup = (props) => {
     const {showModal,setShowModal,title} = props;
 
+  
   return (
     <>
     {showModal ? (
@@ -40,7 +42,8 @@ const DeletePopup = (props) => {
                     <div className="items-center gap-2 mt-3 sm:flex">
                       <button
                         className="w-full mt-2 p-2.5 flex-1 text-white bg-red-600 rounded-md outline-none ring-offset-2 ring-red-600 focus:ring-2"
-                        onClick={() => setShowModal(false)}
+                        onChange={() => setShowModal(false) }
+            
                       >
                         Delete
                       </button>

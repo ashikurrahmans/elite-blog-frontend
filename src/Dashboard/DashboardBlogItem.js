@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import DeletePopup from "./DeletePopup";
 
 
-const DashboardBlogItem = ({blog}) => {
+const DashboardBlogItem = ({blog,deleteBlog}) => {
 
   const [showModal, setShowModal] = useState(false)
 
@@ -204,8 +204,11 @@ const DashboardBlogItem = ({blog}) => {
                       </td>
                   
                       <td>
-                      <button className=" bg-pink-700 mr-3 text-white p-2 rounded-lg"  onClick={() => setShowModal(true)}>Delete</button>
-                      <DeletePopup showModal={showModal} setShowModal ={setShowModal} title="Want to delete this blog post?" ></DeletePopup>    
+                      <button className=" bg-pink-700 mr-3 text-white p-2 rounded-lg" 
+                      //  onClick={() => setShowModal(true)}
+                      onClick={()=> deleteBlog(blog._id)}
+                       >Delete</button>
+                      <DeletePopup showModal={showModal} setShowModal={setShowModal} title="Want to delete this blog post?" ></DeletePopup>    
 
                       </td>
                     </tr>

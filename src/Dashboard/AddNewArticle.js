@@ -21,7 +21,6 @@ setfeatureImage(URL.createObjectURL(e.target.files[0]));
   };
 
 const handleUploadImage = async(e) =>{
-
     const file = e.target.files[0]
     var formdata = new FormData();
   
