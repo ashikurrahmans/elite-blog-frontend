@@ -22,7 +22,7 @@ const ContentProvider = ({ children }) => {
     const dataFetch = async () => {
       const data = await (
         await fetch(
-          "http://localhost:5000/blogs"
+          "https://elite-dental-server-node.onrender.com/blogs"
         )
       ).json();
 
@@ -40,7 +40,7 @@ const ContentProvider = ({ children }) => {
 
 //     const fetchBlog = () => {
 //       setLoading(true)
-//       fetch(`http://localhost:5000/blogs`)
+//       fetch(`https://elite-dento.herokuapp.com/blogs`)
 //         .then((res) => res.json())
 //         .then((data) => {
 //           setBlogs(data)
@@ -53,7 +53,7 @@ const ContentProvider = ({ children }) => {
   // Fetching for Blog
   const fetchBlogSingle = (id) => {
     setLoading(true);
-    fetch(`http://localhost:5000/blogs/${id}`)
+    fetch(`https://elite-dental-server-node.onrender.com/blogs/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setSingleBlog(data);
@@ -74,7 +74,7 @@ const ContentProvider = ({ children }) => {
     // Fetching for All Categories
     const findAllCategories = () => {
       setLoading(true);
-      fetch(`http://localhost:5000/categories`)
+      fetch(`https://elite-dental-server-node.onrender.com/categories`)
         .then((res) => res.json())
         .then((data) => {
           setAllCategories(data);

@@ -12,7 +12,7 @@ const AllArticlesDash = () => {
   const deleteBlog = (id) => {
     const proceed = window.confirm("Really you want to delete?");
     if (proceed) {
-      fetch(`http://localhost:5000/blogs/${id}`, {
+      fetch(`https://elite-dental-server-node.onrender.com/blogs/${id}`, {
         method: "DELETE",
       })
         .then((data) => data.json())

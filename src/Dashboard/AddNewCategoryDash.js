@@ -21,7 +21,7 @@ const AddNewCategoryDash = () => {
      reset(category)
     }
     const postToDatabase =  (category) => {
-       fetch('http://localhost:5000/categories', {
+       fetch('https://elite-dental-server-node.onrender.com/categories', {
           method: 'POST',
           headers: {
             'Accept': 'application/json',

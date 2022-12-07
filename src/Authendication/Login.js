@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useForm } from "react-hook-form";
 
 
@@ -9,25 +8,9 @@ const Login = () => {
 
   const onSubmit = data => {
     console.log(data)
-    loginPost(data)
   };
 
-  const loginPost = (data) => {
-    const options = {
-      url: "http://localhost:5000/users",
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json;charset=UTF-8",
-      },
-      data: data,
-    };
 
-    axios(options).then((response) => {
-      console.log(response.status);
-    });
-    console.log("Server data");
-  };
 
   return (
     <>

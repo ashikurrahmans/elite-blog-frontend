@@ -14,7 +14,7 @@ const AllCategoriesDash = () => {
   const delteCategoryToDB =  (id) => {
     const proceed = window.confirm("Really you want to delete?")
       if(proceed){
-      fetch(`http://localhost:5000/categories/${id}`, {
+      fetch(`https://elite-dental-server-node.onrender.com/categories/${id}`, {
          method: 'DELETE'
         })
         .then(data=>data.json())
