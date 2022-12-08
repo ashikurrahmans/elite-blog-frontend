@@ -10,7 +10,7 @@ const ServicesFatch = ({ serviceTitle, serviceDescription }) => {
     fetch(queryUrl)
       .then((res) => res.json())
       .then((data) => setServices(data));
-  });
+  },[]);
   return (
     <section className="bg-black mt-[-20px]">
       <div className="w-9/12 mx-auto py-10">

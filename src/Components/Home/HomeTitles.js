@@ -7,7 +7,7 @@ const HomeTitles = (props) => {
         <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-white ">
           {props.title}
         </h1>
-        <p className="lg:w-2/3 mx-auto leading-relaxed  text-white">
+        <p className="lg:w-2/3 mx-auto leading-relaxed text-gray-300 text-sm">
           {props.description}
         </p>
       </div>
