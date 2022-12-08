@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -14,53 +15,53 @@ const Footer = () => {
               </p>
               <ul className="mt-2 space-y-2">
                 <li>
-                  <a
-                    href="services/veeners"
+                  <Link
+                    to="services/veeners"
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     Veeners
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/services/crown-and-bride"
+                  <Link
+                    to="/services/crown-and-bride"
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     Crown & Bridge
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/services/implant-restoration"
+                  <Link
+                    to="/services/implant-restoration"
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     Implant Restoration
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/services/custom-shade-service"
+                  <Link
+                    to="/services/custom-shade-service"
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     Custom Shade Service
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a
-                    href="/services/dental-card-design"
+                  <Link
+                    to="/services/dental-card-design"
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     Dental Card Design
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/services/lab-to-lab"
+                  <Link
+                    to="/services/lab-to-lab"
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     Lab To Lab
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -68,36 +69,36 @@ const Footer = () => {
               <p className="font-medium tracking-wide text-gray-300">Menus</p>
               <ul className="mt-2 space-y-2">
                 <li>
-                  <a
-                    href="/about"
+                  <Link
+                    to="/about"
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/blog"
+                  <Link
+                    to="/blogs"
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     Blog
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/services"
+                  <Link
+                    to="/services"
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     Services
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/contact"
+                  <Link
+                    to="/contact"
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     Contact
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -105,28 +106,28 @@ const Footer = () => {
               <p className="font-medium tracking-wide text-gray-300">Legal</p>
               <ul className="mt-2 space-y-2">
                 <li>
-                  <a
-                    href="/"
+                  <Link
+                    to="/"
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     License
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/"
+                  <Link
+                    to="/"
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     Privacy Policy
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/"
+                  <Link
+                    to="/"
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     Terms & Conditions
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -136,12 +137,12 @@ const Footer = () => {
               </p>
               <ul className="mt-2 space-y-2">
                 <li>
-                  <a
-                    href="/"
+                  <Link
+                    to="/contact"
                     className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                   >
                     Contact
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
