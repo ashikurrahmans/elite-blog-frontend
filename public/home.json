@@ -1,0 +1,132 @@
+[
+    {
+      "id": 1,
+      "homeTitle": "Elite Dental Studio USA",
+      "homeDescription": "At Elite Dental Studio we offer a wide range of dental lab products & services. Including but not limited to, Crown and bridge, Removable, Implant planning and restorations. Our specialty is in Crown and bridge Ceramics. Shade matching in Office is available. Here are some options, just click .",
+      "greenSectionLeft": "State-of-the-Art | Full Service",
+      "greenBottom": "Elite Dental Studio USA",
+      "greenSectionRight": "The leading lab authority on digital impressions",
+      "serviceTitle": "Our Services",
+      "serviceDescription": "At Elite Dental Studio we offer a wide range of dental lab products & services. Including but not limitedto, Crown and bridge, Removable, Implant planning and restorations. Our specialty is inCrown and bridge Ceramics. Shade matching in Office is available. Here are some options, just click.",
+      "iconSectionTitle": "Improve Your Dental Practice Using Modern Laboratories",
+      "iconSectionDescription": "Elite Dental Studio USA is devoted to assisting dentists with all aspects of their cases. For instance, single to full arch implant restorations, veneers, implant custom abutments, and other elite products. Through a combination of technology and workmanship, we're able to provide bespoke fits that suit the precise needs of your patients.",
+      "icon": [
+        {
+          "id": 1,
+          "IconName": "AiOutlineCloudDownload",
+          "title": "20+ Yrs",
+          "description": "Dental LAB"
+        },
+        {
+          "id": 2,
+          "IconName": "TbHeadphones",
+          "title": "250k+​",
+          "description": "Success"
+        },
+        {
+          "id": 3,
+          "IconName": "BiDonateBlood",
+          "title": "100%",
+          "description": "Made In USA"
+        },
+        {
+          "id": 4,
+          "IconName": "BiCurrentLocation",
+          "title": "100%",
+          "description": "Dental Implant"
+        }
+      ],
+      "faqTitle": "Frequently Asked Questions",
+      "faqDescription": "",
+      "faq": [
+        {
+          "id": 1,
+          "title": "Why should I use Elite Dental Studio?",
+          "description": "Elite Dental Studio USA is among the leading Dental labs in the USA. When you need to find a quick-turnaround dental restoration near you, we’ve got you covered with our emergency services. Over the years, we have collaborated with several renowned dentists and offer the best dental esthetic restorations. With us, you can expect quality services, customer support, and the latest technology."
+        },
+        {
+          "id": 2,
+          "title": "What shipping methods do you use?​",
+          "description": "For all out-of-state and non-local dental practices, UPS is our preferred courier. We are happy to offer USPS and FedEx as additional delivery options."
+        },
+        {
+          "id": 3,
+          "title": "What are your turnaround times?",
+          "description": "12 days for the majority of restorative work. 15 days for implants. Please contact us for complex matters. We can expedite emergency jobs in 3 to 6 days."
+        },
+        {
+          "id": 4,
+          "title": "What are your payment terms?",
+          "description": "With the proper bank and credit referrals, open account periods may be extended to dentistry clients. Terms are net 30 days based on the date of the invoice. Accounts that are past due incur a 1.8% interest charge. In addition, we now accept payment using Discover®, American Express® and ®Visa® Cards."
+        }
+      ],
+  
+      "galleryTitle": "Helping Doctors to Restore Patients’ Smiles",
+      "galleryDescription": "Founded on the mastery of aesthetic dental restorations, Elite Dental Studio's objective is to achieve natural aesthetics and excellent performance with each restoration we design. Whether a case calls for crowns, custom abutments, veneers, or implant restorations, our first aim is to assist our dentists in satisfying their patients by achieving the optimal balance between design and functionality. Because smiles matter, we dedicate ourselves to our legacy of collaborating with our customers to ensure their success.",
+      "imageBox": [
+        {
+          "id": 1,
+          "ImageUrl": "https://res.cloudinary.com/dcqcto7jt/image/upload/v1665588190/elitedental/red-teeth_qz6oax.jpg",
+          "title": "Shooting Stars1",
+          "meta": "Shooting Stars",
+          "description": "Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat."
+        },
+        {
+          "id": 2,
+          "ImageUrl": "https://res.cloudinary.com/dcqcto7jt/image/upload/v1665588187/elitedental/Veeners_gwj0dg.png",
+          "title": "Shooting Stars2",
+          "meta": "Shooting Stars",
+          "description": "Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat."
+        },
+        {
+          "id": 3,
+          "ImageUrl": "https://res.cloudinary.com/dcqcto7jt/image/upload/v1665588187/elitedental/full-teeth_g4sd1h.png",
+          "title": "Shooting Stars3",
+          "meta": "Shooting Stars",
+          "description": "Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat."
+        },
+        {
+          "id": 4,
+          "ImageUrl": "https://res.cloudinary.com/dcqcto7jt/image/upload/v1665588184/elitedental/custom-shade_hummy0.jpg",
+          "title": "Shooting Stars4",
+          "meta": "Shooting Stars",
+          "description": "Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat."
+        },
+        {
+          "id": 5,
+          "ImageUrl": "https://res.cloudinary.com/dcqcto7jt/image/upload/v1665588181/elitedental/Teeths_kpkyzi.jpg",
+          "title": "Shooting Stars5",
+          "meta": "Shooting Stars",
+          "description": "Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat."
+        },
+        {
+          "id": 6,
+          "ImageUrl": "https://res.cloudinary.com/dcqcto7jt/image/upload/v1665588180/elitedental/white-teeth_m8lfmg.jpg",
+          "title": "Shooting Stars6",
+          "meta": "Shooting Stars",
+          "description": "Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat."
+        },
+        {
+          "id": 7,
+          "ImageUrl": "https://res.cloudinary.com/dcqcto7jt/image/upload/v1665588178/elitedental/black-teeth_hpwuyz.jpg",
+          "title": "Shooting Stars7",
+          "meta": "Shooting Stars",
+          "description": "Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat."
+        },
+        {
+          "id": 8,
+          "ImageUrl": "https://res.cloudinary.com/dcqcto7jt/image/upload/v1665588178/elitedental/implent-restoration_hswqmh.jpg",
+          "title": "Shooting Stars8",
+          "meta": "Shooting Stars",
+          "description": "Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat."
+        },
+        {
+          "id": 9,
+          "ImageUrl": "https://res.cloudinary.com/dcqcto7jt/image/upload/v1665588177/elitedental/crown-and-bridge_godjol.jpg",
+          "title": "Shooting Stars9",
+          "meta": "Shooting Stars",
+          "description": "Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat."
+        }
+      ]
+    }
+  ]
