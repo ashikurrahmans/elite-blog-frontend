@@ -11,11 +11,7 @@ const FileUpload = () => {
           Upload Your File to Reach Out
         </h1>
         <p className="leading-relaxed text-base ml-6 mr-6 mx-auto">
-          Submitting additional case files to our team is very convenient with
-          our file uploader. We do not accept .STL files through our file
-          uploader and request that you use our digital protocols to send any
-          digital impressions to our lab. Our drag & drop file uploader is an
-          excellent tool to submit photos and other casework.
+        Submitting additional case files to our team is very convenient with our file uploader. Our drag & drop file uploader is an excellent tool to submit photos and other casework.
         </p>
       </div>
 

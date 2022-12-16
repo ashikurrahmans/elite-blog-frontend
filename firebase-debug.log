@@ -1,0 +1,114 @@
+[debug] [2022-12-16T13:42:25.018Z] ----------------------------------------------------------------------
+[debug] [2022-12-16T13:42:25.020Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-12-16T13:42:25.020Z] CLI Version:   11.16.1
+[debug] [2022-12-16T13:42:25.020Z] Platform:      win32
+[debug] [2022-12-16T13:42:25.021Z] Node Version:  v18.12.1
+[debug] [2022-12-16T13:42:25.021Z] Time:          Fri Dec 16 2022 19:42:25 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-12-16T13:42:25.021Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-16T13:42:25.026Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2022-12-16T13:42:25.125Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-16T13:42:25.126Z] > authorizing via signed-in user (elitedentalstudioseo@gmail.com)
+[debug] [2022-12-16T13:42:25.126Z] [iam] checking project elitedentalstudiousa-5a05b for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-12-16T13:42:25.127Z] > refreshing access token with scopes: []
+[debug] [2022-12-16T13:42:25.128Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-12-16T13:42:25.128Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-16T13:42:25.411Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2022-12-16T13:42:25.412Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-16T13:42:25.413Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/elitedentalstudiousa-5a05b:testIamPermissions [none]
+[debug] [2022-12-16T13:42:25.413Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/elitedentalstudiousa-5a05b:testIamPermissions x-goog-quota-user=projects/elitedentalstudiousa-5a05b
+[debug] [2022-12-16T13:42:25.413Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/elitedentalstudiousa-5a05b:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-16T13:42:25.974Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2022-12-16T13:42:25.974Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2022-12-16T13:42:27.048Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/elitedentalstudiousa-5a05b:testIamPermissions 401
+[debug] [2022-12-16T13:42:27.048Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/elitedentalstudiousa-5a05b:testIamPermissions {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED","details":[{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"ACCESS_TOKEN_TYPE_UNSUPPORTED","metadata":{"method":"google.cloudresourcemanager.v1.Projects.TestIamPermissions","service":"cloudresourcemanager.googleapis.com"}}]}}
+[debug] [2022-12-16T13:42:27.049Z] [iam] error while checking permissions, command may fail: FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2022-12-16T13:42:27.049Z] > refreshing access token with scopes: []
+[debug] [2022-12-16T13:42:27.049Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-12-16T13:42:27.049Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-16T13:42:27.319Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2022-12-16T13:42:27.319Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-16T13:42:27.320Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/elitedentalstudiousa-5a05b [none]
+[debug] [2022-12-16T13:42:27.743Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/elitedentalstudiousa-5a05b 401
+[debug] [2022-12-16T13:42:27.743Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/elitedentalstudiousa-5a05b {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED"}}
+[debug] [2022-12-16T13:42:27.744Z] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2022-12-16T13:42:27.989Z] FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+    at responseToError (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to get Firebase project elitedentalstudiousa-5a05b. Please make sure the project exists and your account has permission to access it.
+[debug] [2022-12-16T13:43:04.528Z] ----------------------------------------------------------------------
+[debug] [2022-12-16T13:43:04.529Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-12-16T13:43:04.529Z] CLI Version:   11.16.1
+[debug] [2022-12-16T13:43:04.529Z] Platform:      win32
+[debug] [2022-12-16T13:43:04.529Z] Node Version:  v18.12.1
+[debug] [2022-12-16T13:43:04.530Z] Time:          Fri Dec 16 2022 19:43:04 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-12-16T13:43:04.530Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-16T13:43:04.588Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-16T13:43:04.589Z] > authorizing via signed-in user (elitedentalstudioseo@gmail.com)
+[debug] [2022-12-16T13:43:04.589Z] [iam] checking project elitedentalstudiousa-5a05b for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-12-16T13:43:04.590Z] > refreshing access token with scopes: []
+[debug] [2022-12-16T13:43:04.592Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-12-16T13:43:04.592Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-16T13:43:05.026Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2022-12-16T13:43:05.026Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-16T13:43:05.026Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/elitedentalstudiousa-5a05b:testIamPermissions [none]
+[debug] [2022-12-16T13:43:05.026Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/elitedentalstudiousa-5a05b:testIamPermissions x-goog-quota-user=projects/elitedentalstudiousa-5a05b
+[debug] [2022-12-16T13:43:05.026Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/elitedentalstudiousa-5a05b:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-16T13:43:06.555Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/elitedentalstudiousa-5a05b:testIamPermissions 401
+[debug] [2022-12-16T13:43:06.555Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/elitedentalstudiousa-5a05b:testIamPermissions {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED","details":[{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"ACCESS_TOKEN_TYPE_UNSUPPORTED","metadata":{"method":"google.cloudresourcemanager.v1.Projects.TestIamPermissions","service":"cloudresourcemanager.googleapis.com"}}]}}
+[debug] [2022-12-16T13:43:06.556Z] [iam] error while checking permissions, command may fail: FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2022-12-16T13:43:06.556Z] > refreshing access token with scopes: []
+[debug] [2022-12-16T13:43:06.556Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-12-16T13:43:06.556Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-16T13:43:06.975Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2022-12-16T13:43:06.975Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-16T13:43:06.976Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/elitedentalstudiousa-5a05b [none]
+[debug] [2022-12-16T13:43:07.416Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/elitedentalstudiousa-5a05b 401
+[debug] [2022-12-16T13:43:07.416Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/elitedentalstudiousa-5a05b {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED"}}
+[debug] [2022-12-16T13:43:07.416Z] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2022-12-16T13:43:07.678Z] FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+    at responseToError (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to get Firebase project elitedentalstudiousa-5a05b. Please make sure the project exists and your account has permission to access it.
+[debug] [2022-12-16T13:43:33.763Z] ----------------------------------------------------------------------
+[debug] [2022-12-16T13:43:33.764Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-12-16T13:43:33.765Z] CLI Version:   11.16.1
+[debug] [2022-12-16T13:43:33.765Z] Platform:      win32
+[debug] [2022-12-16T13:43:33.765Z] Node Version:  v18.12.1
+[debug] [2022-12-16T13:43:33.766Z] Time:          Fri Dec 16 2022 19:43:33 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-12-16T13:43:33.766Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-16T13:43:33.843Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-16T13:43:33.844Z] > authorizing via signed-in user (elitedentalstudioseo@gmail.com)
+[debug] [2022-12-16T13:43:33.844Z] [iam] checking project elitedentalstudiousa-5a05b for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-12-16T13:43:33.846Z] > refreshing access token with scopes: []
+[debug] [2022-12-16T13:43:33.848Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-12-16T13:43:33.849Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-16T13:43:34.276Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2022-12-16T13:43:34.276Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-16T13:43:34.276Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/elitedentalstudiousa-5a05b:testIamPermissions [none]
+[debug] [2022-12-16T13:43:34.276Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/elitedentalstudiousa-5a05b:testIamPermissions x-goog-quota-user=projects/elitedentalstudiousa-5a05b
+[debug] [2022-12-16T13:43:34.277Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/elitedentalstudiousa-5a05b:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-16T13:43:35.806Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/elitedentalstudiousa-5a05b:testIamPermissions 401
+[debug] [2022-12-16T13:43:35.806Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/elitedentalstudiousa-5a05b:testIamPermissions {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED","details":[{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"ACCESS_TOKEN_TYPE_UNSUPPORTED","metadata":{"method":"google.cloudresourcemanager.v1.Projects.TestIamPermissions","service":"cloudresourcemanager.googleapis.com"}}]}}
+[debug] [2022-12-16T13:43:35.807Z] [iam] error while checking permissions, command may fail: FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2022-12-16T13:43:35.807Z] > refreshing access token with scopes: []
+[debug] [2022-12-16T13:43:35.807Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-12-16T13:43:35.807Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-16T13:43:36.238Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2022-12-16T13:43:36.238Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-16T13:43:36.238Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/elitedentalstudiousa-5a05b [none]
+[debug] [2022-12-16T13:43:36.920Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/elitedentalstudiousa-5a05b 401
+[debug] [2022-12-16T13:43:36.920Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/elitedentalstudiousa-5a05b {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED"}}
+[debug] [2022-12-16T13:43:36.920Z] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2022-12-16T13:43:37.309Z] FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+    at responseToError (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to get Firebase project elitedentalstudiousa-5a05b. Please make sure the project exists and your account has permission to access it.

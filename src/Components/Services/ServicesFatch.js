@@ -12,13 +12,13 @@ const ServicesFatch = ({ serviceTitle, serviceDescription }) => {
       .then((data) => setServices(data));
   },[]);
   return (
-    <section className="bg-black mt-[-20px]">
+    <section className="bg-white mt-[-20px]">
       <div className="w-9/12 mx-auto py-10">
         <HomeTitles
           title={serviceTitle}
           description={serviceDescription}
         ></HomeTitles>
-        <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:gap-12 md:gap-8 sm:gap-6 gap-4 gap-y-8">
+        <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:gap-12 md:gap-8 sm:gap-6 gap-4 gap-y-8">
           {services.map((service) => (
             <HomeServiceCard
               service={service}

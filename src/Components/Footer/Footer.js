@@ -5,12 +5,12 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="bg-gray-900">
+    <div className="bg-gray-100 text-black">
       <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="grid row-gap-10 mb-8 lg:grid-cols-6">
           <div className="grid grid-cols-1 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
             <div>
-              <p className="font-medium tracking-wide text-gray-300">
+              <p className=" tracking-wide text-black font-bold">
                 Services
               </p>
               <ul className="mt-2 space-y-2">
@@ -66,7 +66,7 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <p className="font-medium tracking-wide text-gray-300">Menus</p>
+              <p className="tracking-wide text-black font-bold">Menus</p>
               <ul className="mt-2 space-y-2">
                 <li>
                   <Link
@@ -103,7 +103,7 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <p className="font-medium tracking-wide text-gray-300">Legal</p>
+              <p className="tracking-wide text-black font-bold">Legal</p>
               <ul className="mt-2 space-y-2">
                 <li>
                   <Link
@@ -132,7 +132,7 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <p className="font-medium tracking-wide text-gray-300">
+              <p className="tracking-wide text-black font-bold">
                 Supports
               </p>
               <ul className="mt-2 space-y-2">

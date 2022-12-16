@@ -3,11 +3,11 @@ import React from "react";
 const HomeTitles = (props) => {
   return (
     <>
-      <div className="flex flex-col text-center w-full my-24 light:text-black dark:text-white ">
-        <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-white ">
+      <div className="text-center w-full my-10 text-black">
+        <h1 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
           {props.title}
         </h1>
-        <p className="lg:w-2/3 mx-auto leading-relaxed text-gray-300 text-sm">
+        <p className="lg:w-2/3 mx-auto leading-relaxed text-sm">
           {props.description}
         </p>
       </div>

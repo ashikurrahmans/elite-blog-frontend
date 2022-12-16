@@ -1,12 +1,13 @@
 import PageTitle from "../PageTitle/PageTitle";
-import WhyChooseUs from "./WhyChooseUs";
-import ImageGallery from "./ImageGallery";
 import HeroSection from "./HeroSection";
-import Faq from "./Faq";
 import HeroBottom from "./HeroBottom";
 import ServicesFatch from "../Services/ServicesFatch";
 import { useContext } from "react";
 import { pageContent } from "./../../ContextApi/PagesContext";
+import CustomHome from "./CustomHome";
+import HomeDetail from "./HomeDetail";
+import HomeFaq from "./HomeFaq";
+import CustomerReviews from "./CustomerReviews";
 
 const Home = () => {
   const { homeContent } = useContext(pageContent);
@@ -14,20 +15,9 @@ const Home = () => {
   const {
     homeTitle,
     homeDescription,
-    greenSectionLeft,
-    greenBottom,
-    greenSectionRight,
+
     serviceTitle,
     serviceDescription,
-    iconSectionTitle,
-    iconSectionDescription,
-    icon,
-    faqTitle,
-    faqDescription,
-    faq,
-    galleryTitle,
-    galleryDescription,
-    imageBox,
   } = homeContent;
 
   return (
@@ -37,26 +27,15 @@ const Home = () => {
         homeTitle={homeTitle}
         homeDescription={homeDescription}
       ></HeroSection>
-      <HeroBottom
-        greenSectionLeft={greenSectionLeft}
-        greenSectionRight={greenSectionRight}
-        greenBottom={greenBottom}
-      ></HeroBottom>
+      <HeroBottom></HeroBottom>
       <ServicesFatch
         serviceTitle={serviceTitle}
         serviceDescription={serviceDescription}
       ></ServicesFatch>
-      <WhyChooseUs
-        iconSectionTitle={iconSectionTitle}
-        iconSectionDescription={iconSectionDescription}
-        icon={icon}
-      ></WhyChooseUs>
-      <Faq faqTitle={faqTitle} faqDescription={faqDescription} faq={faq}></Faq>
-      <ImageGallery
-        galleryTitle={galleryTitle}
-        galleryDescription={galleryDescription}
-        imageBox={imageBox}
-      ></ImageGallery>
+      <CustomHome></CustomHome>
+      <HomeDetail></HomeDetail>
+      <HomeFaq></HomeFaq>
+      <CustomerReviews></CustomerReviews>
     </>
   );
 };
