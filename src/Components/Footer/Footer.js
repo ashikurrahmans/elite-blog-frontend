@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { HiPhoneMissedCall } from 'react-icons/hi';
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -7,8 +9,7 @@ const Footer = () => {
   return (
     <div className="bg-gray-100 text-black">
       <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-        <div className="grid row-gap-10 mb-8 lg:grid-cols-6">
-          <div className="grid grid-cols-1 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
+          <div className="grid lg:grid-cols-5 md:grid-cols-5 sm:grid-cols-2 grid-cols-1 gap-5 row-gap-8 py-8">
             <div>
               <p className=" tracking-wide text-black font-bold">
                 Services
@@ -132,9 +133,9 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <p className="tracking-wide text-black font-bold">
+              <h2 className="tracking-wide text-black font-bold">
                 Supports
-              </p>
+              </h2>
               <ul className="mt-2 space-y-2">
                 <li>
                   <Link
@@ -146,8 +147,29 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
+         <div>
+         <ul className="mt-2 space-y-2">
+         <h2 className="tracking-wide text-black font-bold">
+                Business Info
+              </h2>
+                <li>
+                 <h3>Elite Dental Studio USA</h3>
+                </li>            
+                <address>
+                  <li>
+                  <a href="mailto:you@somedomain.com">contact@elitedentalstudiousa.com</a><br/>
+                  </li>
+                  <li  className="my-2">
+                  <span className="flex">  <HiPhoneMissedCall className="mt-1"/>
+                  <a href="tel:+18446865534" className="ml-2">+18446865534</a></span>
+                  </li>
+                  <li className="my-2">
+                  <a target="_blank" rel="noreferrer" href="https://goo.gl/maps/Ki9YZfeueNWQ11LF6">2445 Hilton Drive, Suite 100B, Gainesville, GA 30501</a>
+                  </li>
+                </address>
+              </ul>
+         </div>
           </div>
-        </div>
         <div className="flex flex-col justify-between pt-5 pb-10 border-t border-gray-800 sm:flex-row">
           <p className="text-sm text-gray-500">
             © Copyright {currentYear} is a registered trademark. All Rights
