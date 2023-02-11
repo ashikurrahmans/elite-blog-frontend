@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { HiPhoneMissedCall } from 'react-icons/hi';
-
+import { HiPhoneMissedCall } from "react-icons/hi";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -9,167 +8,194 @@ const Footer = () => {
   return (
     <div className="bg-gray-100 text-black">
       <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-          <div className="grid lg:grid-cols-5 md:grid-cols-5 sm:grid-cols-2 grid-cols-1 gap-5 row-gap-8 py-8">
-            <div>
-              <p className=" tracking-wide text-black font-bold">
-                Services
-              </p>
-              <ul className="mt-2 space-y-2">
-                <li>
-                  <Link
-                    to="services/veeners"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                  >
-                    Veeners
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/services/crown-and-bride"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                  >
-                    Crown & Bridge
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/services/implant-restoration"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                  >
-                    Implant Restoration
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/services/custom-shade-service"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                  >
-                    Custom Shade Service
-                  </Link>
-                </li>
+        <div className="grid lg:grid-cols-5 md:grid-cols-5 sm:grid-cols-2 grid-cols-1 gap-5 row-gap-8 py-8">
+          <div>
+            <p className=" tracking-wide text-black font-bold">Services</p>
+            <ul className="mt-2 space-y-2">
+              <li>
+                <Link
+                  to="services/veeners"
+                  className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
+                >
+                  Veeners
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services/crown-and-bride"
+                  className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
+                >
+                  Crown & Bridge
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services/implant-restoration"
+                  className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
+                >
+                  Implant Restoration
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services/custom-shade-service"
+                  className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
+                >
+                  Custom Shade Service
+                </Link>
+              </li>
 
-                <li>
-                  <Link
-                    to="/services/dental-card-design"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                  >
-                    Dental Card Design
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/services/lab-to-lab"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                  >
-                    Lab To Lab
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <p className="tracking-wide text-black font-bold">Menus</p>
-              <ul className="mt-2 space-y-2">
-                <li>
-                  <Link
-                    to="/about"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                  >
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/blogs"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                  >
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/services"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                  >
-                    Services
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/contact"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                  >
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <p className="tracking-wide text-black font-bold">Legal</p>
-              <ul className="mt-2 space-y-2">
-                <li>
-                  <Link
-                    to="/"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                  >
-                    License
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                  >
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                  >
-                    Terms & Conditions
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
+              <li>
+                <Link
+                  to="/services/dental-card-design"
+                  className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
+                >
+                  Dental Card Design
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services/lab-to-lab"
+                  className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
+                >
+                  Lab To Lab
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p className="tracking-wide text-black font-bold">Menus</p>
+            <ul className="mt-2 space-y-2">
+              <li>
+                <Link
+                  to="/about"
+                  className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/blogs"
+                  className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
+                >
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services"
+                  className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
+                >
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
+                >
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p className="tracking-wide text-black font-bold">Legal</p>
+            <ul className="mt-2 space-y-2">
+              <li>
+                <Link
+                  to="/"
+                  className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
+                >
+                  License
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/"
+                  className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/"
+                  className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
+                >
+                  Terms & Conditions
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 className="tracking-wide text-black font-bold">Supports</h2>
+            <ul className="mt-2 space-y-2">
+              <li>
+                <Link
+                  to="/contact"
+                  className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
+                >
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul className="mt-2 space-y-2">
               <h2 className="tracking-wide text-black font-bold">
-                Supports
-              </h2>
-              <ul className="mt-2 space-y-2">
-                <li>
-                  <Link
-                    to="/contact"
-                    className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                  >
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-         <div>
-         <ul className="mt-2 space-y-2">
-         <h2 className="tracking-wide text-black font-bold">
                 Business Info
               </h2>
+              <li>
+                <h3>Elite Dental Studio USA</h3>
+              </li>
+              <address>
                 <li>
-                 <h3>Elite Dental Studio USA</h3>
-                </li>            
-                <address>
-                  <li>
-                  <a href="mailto:you@somedomain.com">contact@elitedentalstudiousa.com</a><br/>
-                  </li>
-                  <li  className="my-2">
-                  <span className="flex">  <HiPhoneMissedCall className="mt-1"/>
-                  <a href="tel:+18446865534" className="ml-2">+18446865534</a></span>
-                  </li>
-                  <li className="my-2">
-                  <a target="_blank" rel="noreferrer" href="https://goo.gl/maps/Ki9YZfeueNWQ11LF6">2445 Hilton Drive, Suite 100B, Gainesville, GA 30501</a>
-                  </li>
-                </address>
-              </ul>
-         </div>
+                  <a href="mailto:Info@elitedentalstudiousa.com">
+                    Info@elitedentalstudiousa.com
+                  </a>
+
+                  <br />
+                </li>
+                <li className="my-2">
+                  <span className="flex">
+                    <HiPhoneMissedCall className="mt-1" />
+                    <a href="tel:+18446865534" className="ml-2">
+                      +18446865534
+                    </a>
+                  </span>
+                </li>
+                <li className="my-2">
+                  <span className="flex">
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      data-prefix="fas"
+                      data-icon="home"
+                      class="w-8 mr-4"
+                      role="img"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 576 512"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"
+                      ></path>
+                    </svg>
+                    <a
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://goo.gl/maps/Ki9YZfeueNWQ11LF6"
+                    >
+                      621 Washington Street SW Suite A3 Gainesville, Ga 30501
+                    </a>
+                  </span>
+                </li>
+              </address>
+            </ul>
           </div>
+        </div>
         <div className="flex flex-col justify-between pt-5 pb-10 border-t border-gray-800 sm:flex-row">
           <p className="text-sm text-gray-500">
             © Copyright {currentYear} is a registered trademark. All Rights
