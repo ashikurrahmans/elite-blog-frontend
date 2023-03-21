@@ -7,18 +7,18 @@ const SinglePdfForm = (props) => {
   return (
     <>
       <section>
-        <div className="p-10 text-center rounded shadow-lg border border-green-500 border-b-8">
+        <div className="p-10 text-center rounded shadow-lg border border-[#6DB416] border-b-8">
           <h1 className="text-4xl font-bold mb-10">{title}</h1>
-          <Link
-            to={`${buttonLink}`}
+          <a
+            href="https://go.ddslab.com/hubfs/Offers/Rx_Forms/Rx%20Forms%20Oct%202017/DDSLAB_RX_CNB.pdf"
             className="text-base font-semibold leading-none text-white py-4 px-10 bg-[#83cf25] rounded hover:bg-[#62ae05] focus:ring-2 focus:ring-offset-2 focus:bg-[#6DB417] focus:outline-none"
           >
             {buttonTitle}
-          </Link>
+          </a>
           <div className="flex justify-center items-center">
-            <Link to={pdfLink}>
+            <a href="https://go.ddslab.com/hubfs/Offers/Rx_Forms/Rx%20Forms%20Oct%202017/DDSLAB_RX_CNB.pdf">
               <img src={pdfImage} alt="crown" className="w-72 mt-10" />
-            </Link>
+            </a>
           </div>
         </div>
       </section>

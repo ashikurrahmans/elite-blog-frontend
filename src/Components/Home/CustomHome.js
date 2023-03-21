@@ -78,7 +78,7 @@ const CustomHome = () => {
             </div>
             <img
               className="hidden w-full mb-4 rounded-lg lg:mb-0 lg:flex"
-              src="https://demo.themesberg.com/landwind/images/feature-1.png"
+              src="https://res.cloudinary.com/dbpiftrij/image/upload/v1679417862/syfqgzxjqvamojanwulh.jpg"
               alt="dashboard feature"
             />
           </div>

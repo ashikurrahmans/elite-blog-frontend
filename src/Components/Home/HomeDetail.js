@@ -7,7 +7,7 @@ const HomeDetail = () => {
           <div className="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
             <img
               className="hidden w-full mb-4 rounded-lg lg:mb-0 lg:flex"
-              src="https://demo.themesberg.com/landwind/images/feature-2.png"
+              src="https://res.cloudinary.com/dbpiftrij/image/upload/v1679417861/fcitvyajre3wbroevpev.jpg"
               alt="feature"
             />
             <div className="text-gray-500 sm:text-lg dark:text-gray-400">
