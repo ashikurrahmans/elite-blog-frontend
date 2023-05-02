@@ -12,7 +12,17 @@ const pdfData = [
       "https://www.ddslab.com/wp-content/uploads/2022/05/DDSLab_RX_Crown_and_Bridge-229x300.jpg.webp",
     pdfLink:
       "https://go.ddslab.com/hubfs/Offers/Rx_Forms/Rx%20Forms%20Oct%202017/DDSLAB_RX_CNB.pdf",
-  }
+  },
+  {
+    id: 2,
+    title: "Crown & Bridge",
+    buttonTitle: "Download Rx Form",
+    bttonLink: "/printable-forms",
+    pdfImage:
+      "https://www.ddslab.com/wp-content/uploads/2022/05/DDSLab_RX_Crown_and_Bridge-229x300.jpg.webp",
+    pdfLink:
+      "https://go.ddslab.com/hubfs/Offers/Rx_Forms/Rx%20Forms%20Oct%202017/DDSLAB_RX_CNB.pdf",
+  },
 ];
 
 const PrintableForms = () => {
